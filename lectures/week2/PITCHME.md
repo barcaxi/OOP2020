@@ -160,6 +160,19 @@ pnames[2]=new Person("Charlie",22);
 @[13-15]
 @[*]
 
+---?color=black
+@title[Title]
+
+@snap[west headline text-white span-70]
+OOP
+Week 2 Lecture 2
+@snapend
+
+@snap[south-west]
+@fa[envelope-o pad-right-icon]@css[contact-email](thomas.devine@lyit.ie)
+@snapend
+
+
 ---
 @title[Content]
 ### Content
@@ -228,8 +241,207 @@ for(int i=0;i<names.size();i++)
 @[9](get() method)
 @[*]
 
+---?color=black
+@title[Title]
+
+@snap[west headline text-white span-70]
+OOP
+Week 2 Lecture 2
+@snapend
+
+@snap[south-west]
+@fa[envelope-o pad-right-icon]@css[contact-email](thomas.devine@lyit.ie)
+@snapend
+
+
 ---
-Continue on Wednesday...
+@title[Content]
+### Content
+
+@ol[](false)
+- **User-defined classes**
+
+@olend
+
+
+---
+@title[User-defined Classes]
+### User-defined Classes
+
+@ul[list-bullets-black](false)You can easily create user-defined classes using Processing IDE
+- You can easily create user-defined classes using Processing IDE
+- e.g. ``Spot`` class...
+@ulend
+
+
+---?image=/images/Spot.png&size=auto 75%&position=right
+@title[Processing Classes]
+### Processing Classes
+
+@ul[list-bullets-black](false)You can easily create user-defined classes using Processing IDE
+- Create a _tab_ for your class(es)
+@ulend
+
+---?image=/images/Spot2.png&size=auto 75%&position=right
+@title[Processing Classes]
+### Processing Classes
+
+@ul[list-bullets-black](false)You can easily create user-defined classes using Processing IDE
+- Use from main project tab
+@ulend
+
+---
+@title[Content]
+### Content
+@ol[](false)
+- User-defined classes
+- **ArrayList example**
+@olend
+
+---
+@title[ArrayList Example]
+### ArrayList Example
+
+@size[1.5em](Correct) way to @size[1.5em](declare) and @size[1.5em](create) arraylist...
+
+---
+
+```java
+import java.util.ArrayList;
+
+ArrayList<Integer> data;
+int largest=0;
+
+void setup()
+{
+  size(500, 200);
+  data = new ArrayList<Integer>();
+  data.add(new Integer(10));
+  data.add(new Integer(20));
+  data.add(new Integer(30));
+  data.add(new Integer(40));
+  data.add(new Integer(50));
+}
+
+void draw()
+{
+  background(0, 0, 0);
+  for (int i=0; i<data.size(); i++)
+    ellipse(i*100, 100, data.get(i), data.get(i));
+}
+```
+@[1,3](Declare data ArrayList)
+@[1,3,6,7,15,9](Create data ArrayList)
+@[1,3,6,7,15,9,10-14](Initialise data ArrayList)
+@[17,18,20,21,22](Use data ArrayList)
+@[*]
+
+---
+@title[ArrayList Example]
+### ArrayList Example
+
+@size[1.5em](What's wrong here?)
+
+---
+
+```java
+import java.util.ArrayList;
+
+ArrayList<Integer> data;
+int largest=0;
+
+void setup()
+{
+  size(500, 200);
+  ArrayList<Integer> data = new ArrayList<Integer>();
+  data.add(new Integer(10));
+  data.add(new Integer(20));
+  data.add(new Integer(30));
+  data.add(new Integer(40));
+  data.add(new Integer(50));
+}
+
+void draw()
+{
+  background(0, 0, 0);
+  for (int i=0; i<data.size(); i++)
+    ellipse(i*100, 100, data.get(i), data.get(i));
+}
+```
+@[3,9](Now TWO data arraylists)
+@[6,7,9-14,15](local to setup() method)
+@[3](data=null - not created!)
+@[17,18,20,21,22](NullPointer Exception)
+@[*]
+
+---
+@title[Content]
+### Content
+@ol[](false)
+- User-defined classes
+- ArrayList example
+- **Enhanced for loop**
+@olend
+
+---
+
+```java
+import java.util.ArrayList;
+
+ArrayList<Spot> spots;                  // Declare arraylist of spot objects
+
+void setup()
+{
+  size(300, 200);
+  spots = new ArrayList<Spot>();        // Create arraylist of spot objects
+  spots.add(new Spot(0, 100, 50));      // add spot objects to arraylist
+  spots.add(new Spot(-100, 100, 50));
+  spots.add(new Spot(-200, 100, 50));
+}
+
+void draw()
+{
+  background(0, 0, 0); 
+  for (int i=0; i<spots.size(); i++)
+  {
+    spots.get(i).move();
+    spots.get(i).display();
+  }
+}
+```
+@[3,8-11](Declare, Create & Initialise)
+@[17-21](move & display using standard for loop)
+@[*](There's another way using enhanced for loop...)
+
+---
+
+```java
+import java.util.ArrayList;
+
+ArrayList<Spot> spots;                  // Declare arraylist of spot objects
+
+void setup()
+{
+  size(300, 200);
+  spots = new ArrayList<Spot>();        // Create arraylist of spot objects
+  spots.add(new Spot(0, 100, 50));      // add spot objects to arraylist
+  spots.add(new Spot(-100, 100, 50));
+  spots.add(new Spot(-200, 100, 50));
+}
+
+void draw()
+{
+  background(0, 0, 0); 
+  for(Spot spot: spots)
+  {
+    spot.move();
+    spot.display();
+  }
+}
+```
+@[17,18,21](for each spot in spots)
+@[17-21](move & display)
+@[*]
 
 
 ---?color=black
@@ -237,7 +449,7 @@ Continue on Wednesday...
 
 @snap[west headline text-white span-70]
 OOP
-Week 1 Lecture 1
+Week 2 Lectures
 @snapend
 
 @snap[south-west]
