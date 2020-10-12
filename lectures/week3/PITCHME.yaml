@@ -33,7 +33,7 @@ theme-override : template/css/PITCHME.css
 # Doc: https://gitpitch.com/docs/settings/footnote
 #
 # footnote : "GitPitch - The Fastest Way From Idea To Presentation"
-footnote : "<a target='_blank' href='https://github.com/barcaxi/OOP2018'>OOP</a>"
+footnote : "<a target='_blank' href='https://github.com/barcaxi/OOP2020'>OOP</a>"
 
 
 
