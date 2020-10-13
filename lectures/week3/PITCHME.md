@@ -146,6 +146,291 @@ catch(ArrayIndexOutOfBoundsException e)
 @ulend
 
 
+
+---?color=black
+@title[Title]
+
+@snap[west headline text-white span-70]
+OOP Week 3
+Lecture 2
+@snapend
+
+@snap[south-west]
+@fa[envelope-o pad-right-icon]@css[contact-email](thomas.devine@lyit.ie)
+@snapend
+
+
+---
+@title[Contents]
+### Contents
+
+@ul[](false)
+- Java Exceptions
+- **Throwing Exceptions**
+- Checked & Unchecked Exceptions
+@ulend
+
+---
+@title[Throwing Java Exceptions]
+### Throwing Java Exceptions
+
+
+@ul[](true)
+- You can have your class methods @size[1.5em](throw) exceptions if something is wrong
+- What could be wrong?
+- Someone using your methods passes invalid values...
+@ulend
+
+---
+@title[Spot class]
+### Spot class
+
+```java
+public class Spot
+{
+  private float x, y, diameter;
+
+  public Spot(float x, float y) {
+    this.x=x;
+    this.y=y;
+    this.diameter=50;
+  }
+  public void move() {
+    x++;
+  }
+  public void display() {
+    ellipse(x, y, diameter, diameter);
+  }
+}
+```
+@[5-9](We should check for invalid x,y values...)
+@[*]
+
+---
+@title[Use Spot class]
+### Use Spot class
+```java
+Spot sp;
+
+void setup()
+{
+  size(200, 200);
+  sp = new Spot(-100, 100);
+}
+
+void draw()
+{
+  background(0, 0, 0);
+  sp.move();
+  sp.display();
+}
+```
+@[6](-100 is outside window)
+@[*]
+
+@ul[](true)
+- Let's have ``Spot()`` constructor throw an exception for invalid x,y values...
+@ulend
+
+---
+@title[Throwing an Exception]
+### Throwing an Exception
+
+```java
+public class Spot
+{
+  private float x, y, diameter;
+
+  public Spot(float x, float y) {
+    if(x<0 || x>width)
+      throw new Exception("Invalid x coordinate: " + x);
+    this.x=x;
+    this.y=y;
+    this.diameter=50;
+  }
+  ...
+}
+```
+@[6-7](Check for invalid x values before intialising class vars & )
+@[6-7](throw a generic Exception with message)
+@[*]
+
+@ul[](true)
+- We also need to declare ``Spot()`` throws an Exception...
+@ulend
+
+---
+@title[Throwing an Exception]
+### Throwing an Exception
+
+```java
+public class Spot
+{
+  private float x, y, diameter;
+
+  public Spot(float x, float y) throws Exception {
+    if(x<0 || x>width)
+      throw new Exception("Invalid x coordinate: " + x);
+    this.x=x;
+    this.y=y;
+    this.diameter=50;
+  }
+  ...
+}
+```
+@[5,11](Spot signature must be updated)
+@[5-11](Spot constructor)
+@[*]
+
+@ul[](true)
+- Next we must catch the exception...
+@ulend
+
+---
+@title[Use Spot class]
+### Catch the Exception
+```java
+Spot sp;
+
+void setup()
+{
+  size(200, 200);
+  sp = new Spot(-100, 100);
+}
+
+void draw()
+{
+  background(0, 0, 0);
+  sp.move();
+  sp.display();
+}
+```
+@[6](We will get a compile time error here now)
+@[6](e.g. Uncaught Exception)
+@[*]
+
+@ul[](true)
+- Add a the ``try..catch`` statement... 
+@ulend
+
+---
+@title[Use Spot class]
+### Catch the Exception
+```java
+Spot sp;
+
+void setup()
+{
+  size(200, 200);
+  try {
+    sp = new Spot(-100, 100);
+  }
+  catch(Exception e) {
+    println(e.getMessage());
+    exit();
+  }
+}
+
+...
+```
+@[6-8](try)
+@[6-12](try...catch)
+@[10](Invalid x coordinate: -100)
+@[*]
+
+@ul[](true)
+- Summary...
+@ulend
+
+---
+@title[Throwing Your Own Exceptions]
+### Throwing Your Own Exceptions
+
+@ol[](true)
+- ``throw`` an exception from within your method
+- Update the method signature 
+- Catch the exception where method is used
+@olend
+
+
+---
+@title[Contents]
+### Contents
+
+@ul[](false)
+- Java Exceptions
+- Throwing Exceptions
+- **Checked & Unchecked Exceptions**
+@ulend
+
+
+---
+@title[Checked & Unchecked Exceptions]
+### Checked & Unchecked Exceptions
+
+We've seen two types of Java exceptions:
+
+@ol[](true)
+- Checked
+- Unchecked
+@olend
+
+---
+@title[Checked Exceptions]
+### Checked Exceptions
+
+@quote[Checked exceptions are **checked** at **compile time**]
+
+Examples...
+
+---?image=/images/exception4.png&size=auto 40%&position=right
+@title[Checked Exceptions]
+### Checked Exceptions
+
+@ul[list-bullets-black](true)
+- ``Spot()`` constructor is checked exception
+- Java checks at compile time it has a ``try..catch``
+- Another example...
+@ulend
+
+---?image=/images/exception5.png&size=auto 40%&position=right
+@title[Checked Exceptions]
+### Checked Exceptions
+
+@ul[list-bullets-black](true)
+- The ``Thread.sleep`` method is checked method
+- Java checks at compile time it has a ``try..catch``
+@ulend
+
+---
+@title[Unchecked Exceptions]
+### Unchecked Exceptions
+
+@quote[Unchecked exceptions are NOT checked at compile time]
+
+@ul[](true)
+- They happen at runtime
+- All Java ``RuntimeException`` classes are unchecked exceptions, e.g.
+  - ``NullPointerException``
+  - ``ArrayIndexOutOfBoundsException``
+  - ``ArithmeticException`` etc.
+  - example...
+@ulend
+
+---?image=/images/exception3.png&size=auto 40%&position=right
+@title[Unchecked Exceptions]
+### Unchecked Exceptions
+
+``NullPointerException`` is a unchecked exception
+
+---
+@title[To check or not to check?]
+### To check or not to check?
+
+@quote[If a client can reasonably be expected to recover from an exception, make it a checked exception]
+
+@quote[If a client cannot do anything to recover from the exception, make it an unchecked exception]
+
 ---?color=black
 @title[Title]
 
@@ -157,3 +442,4 @@ Week 3
 @snap[south-west]
 @fa[envelope-o pad-right-icon]@css[contact-email](thomas.devine@lyit.ie)
 @snapend
+
