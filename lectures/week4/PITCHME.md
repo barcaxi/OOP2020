@@ -11,14 +11,14 @@ Lecture 1
 @snapend
 
 ---
-@title[Week 3 Notes]
-### Week 3 Notes
+@title[Week 4 Notes]
+### Week 4 Notes
 
 View [Java Composition](https://github.com/barcaxi/OOP2020/blob/master/notes/Composition.md) at GitHub
 
 ---
-@title[Week 3 Videos]
-### Week 3 Videos
+@title[Week 4 Videos]
+### Week 4 Videos
 
 View Java Composition on BB
 
