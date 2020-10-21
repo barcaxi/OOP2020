@@ -160,11 +160,154 @@ class Book {
 @[*]
 
 
+---?color=black
+@title[Title]
+
+@snap[west headline text-white span-70]
+OOP Week 4  
+Lecture 2
+@snapend
+
+@snap[south-west]
+@fa[envelope-o pad-right-icon]@css[contact-email](thomas.devine@lyit.ie)
+@snapend
+
 ---
-to be continued...
+@title[Week 3 Assignment #1]
+### Assignment #1 Review
 
-Assignment #1 Review on Wednesday!
+@ul[list-bullets-black](true)
+- 54 attempts
+- Average @size[1.5em](62%)
+- Next Assignment - Class Test Week 6 @size[1.5em](10%)
+- Let's look at @size[1.5em](top 5) incorrectly answered questions
+- Don't make these mistakes *again...*
 
+@ulend
+
+---
+
+### #5 - 30/54 Incorrect Answers
+
+What type of exception will be thrown in the code below: 
+```java
+String name; 
+println(name.length()); 
+```
+Choices:
+```
+(a) NullPointerException
+(b) None of these
+(c) ArithmeticException
+(d) ArrayIndexOutOfBoundsException
+```
+@[1-2,3]
+
+
+---
+### #4 - 31/54 Incorrect Answers
+
+What does the following code print? 
+```java
+ArrayList<String> al = new ArrayList<String>(); 
+al.add("A"); 
+al.add("B"); 
+al.add("A"); 
+
+al.remove("A"); 
+println(al);
+```
+Choices:
+```
+(a) [B]
+(b) [A,B,A]
+(c) [B,A]
+```
+@[1-7,10]
+
+
+---
+### #3 - 35/54 Incorrect Answers
+
+With an enhanced for loop we can retrieve array elements without having to specify the index. Provide the correct code at the missing code(...) so each value in the data array is printed.
+
+```java
+int data[] = {2,4,8,16,32};  
+for(int value: data) 
+  println(...);
+```
+Answer is:
+@ul[list-bullets-black](true)
+- ``value``
+@ulend
+
+
+
+---
+### #2 - 37/54 Incorrect Answers
+
+Provide the correct code at the missing code(...) so each value in the data array list is printed.
+```java
+import java.util.ArrayList;  
+ArrayList<Integer>  data = new ArrayList<Integer>(); 
+data.add(10); 
+data.add(20); 
+data.add(30);  
+for(int i=0;i<data.size();i++) 
+   println(...);
+```
+Answer is:
+@ul[list-bullets-black](true)
+- ``data.get(i)``
+@ulend
+
+
+
+---
+### #1 - 46/54 Incorrect Answers
+
+Which line number has an invalid array declaration and initialisation? 
+```java
+1: int[] nums = new int[2]; nums[0]=1;nums[1]=2; 
+2: int nums[] = new int[2]; nums[0]=1;nums[1]=2; 
+3: int[] nums = {1,2}; 
+4: String[] strings = {"",""}; 
+```
+Choices:
+```
+(a) 1
+(b) 2
+(c) 3
+(d) 4
+(e) None of these are invalid
+```
+@[1-4,9]
+
+
+
+
+
+---
+Best answered question...
+
+---
+### #1 - 2/54 Incorrect Answers
+
+What does the following code print? 
+```java
+ArrayList<String> al = new ArrayList<String>(); 
+al.add("A"); 
+al.add("B"); 
+al.add("A"); 
+
+println(al); 
+```
+Choices:
+```
+(a) [A,B]
+(b) [A,B,A]
+```
+@[1-6,8]
 
 ---?color=black
 @title[Title]
