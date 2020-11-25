@@ -143,10 +143,6 @@ You'll see a *Pacman* near the top of the screen, a *Dot* at the top left, and a
 
 	Also, make sure you are displaying the correct text for the Score and Lives. 
 
-See video [here](https://media.heanet.ie/page/6cbd710dca88426c91afd45364c8d3da) for an demo of how Part 1 should look when done.
-
-
-
 
 
 ## Part 2 - Ghost & GameCharacter abstract class
@@ -239,9 +235,6 @@ Make a copy of your ``pacmanPart1`` project folder, paste and rename it ``pacman
 
 1.	Now that you have the four ghosts, make the necessary change to display these four ghosts, and NOT four Inky ghosts.  This will require you to change the data type of the ``ghosts`` arraylist and make other code amendments.
 
-See video [here](https://lyitbb.blackboard.com/bbcswebdav/pid-556230-dt-content-rid-2033098_1/xid-2033098_1) for an example of how Part 2 should run when done.
-
-
 
 ## Part 3 - InvalidLocationException & Edible
 
@@ -281,11 +274,6 @@ This code solution will require a moderate amount of independent work by you.
 1.	The value returned by the ``isEdible()`` method will determine if the Pacman can be eaten by ghosts or not.
 	Update the code in ``Game`` to use the new ``isEdible()`` method **before** checking if a ghost has eaten the Pacman.  
 	If Pacman is not edible do not check if any ghost has eaten it.
-
-
-
-
-See video [here]() for an example of how Part 3 should run when done.
 
 
 
