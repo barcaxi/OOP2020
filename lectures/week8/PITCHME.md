@@ -290,6 +290,50 @@ Features of abstract classes:
 @ulend
 
 
+
+---
+@title[Week 3 Assignment #2]
+### Assignment #2 Review
+
+@ul[list-bullets-black](true)
+- 59 students
+- Average @size[1.5em](59%)
+- Next Assignment - Class Test Week 9 @size[1.5em](15%)
+- Let's look at @size[1.5em](top 5) incorrectly answered questions
+- Don't make these mistakes *again...*
+
+@ulend
+
+
+---?image=/images/2.png&size=auto 65%&position=top&color=#FFFFFF
+
+---?image=/images/2ans.png&size=auto 65%&position=top&color=#FFFFFF
+
+
+---?image=/images/5.png&size=auto 65%&position=top&color=#FFFFFF
+
+---?image=/images/5ans.png&size=auto 65%&position=top&color=#FFFFFF
+
+
+---?image=/images/3.png&size=auto 65%&position=top&color=#FFFFFF
+
+---?image=/images/3ans.png&size=auto 65%&position=top&color=#FFFFFF
+
+
+---?image=/images/1.png&size=auto 65%&position=top&color=#FFFFFF
+
+---?image=/images/1ans.png&size=auto 65%&position=top&color=#FFFFFF
+
+
+
+---?image=/images/4a.png&size=auto 65%&position=top&color=#FFFFFF
+
+---?image=/images/4b.png&size=auto 65%&position=top&color=#FFFFFF
+
+---?image=/images/4bans.png&size=auto 65%&position=top&color=#FFFFFF
+
+
+
 ---?color=black
 @title[Title]
 
