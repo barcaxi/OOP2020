@@ -291,14 +291,17 @@ This code solution will require more independent work by you.
 	
 	b.	should use a green colour
 	
-	b.	display at location (3,6)
+	c.	display at location (3,6)
 
-	c.	if Pacman eats it
+	d.	if Pacman eats it:
+	
+		i.	you should see a green flash at the moment the Pacman eats it
+
+		ii.	Pacman becomes inedible to ghosts
+
+		iii.the ghosts change colour to blue
 		
-		-	you should see a green flash at the moment the Pacman eats it
-		-	Pacman becomes inedible to ghosts
-		-	the ghosts change colour to blue
-		-	the score for eating `Dots` is doubled.  (more on scoring next)
+		iv.	the score for eating `Dots` is doubled.  (more on scoring next)
 
 1.	You need to update and display a score whilst playing the game.  Scores are awarded for eating Dots:
 
